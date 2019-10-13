@@ -1,0 +1,57 @@
+body {
+	background: url(images/back.jpg) center center fixed;
+	background-size: cover;
+	color: #fff;
+}
+
+/*title*/
+#header {
+	text-align: center;
+	font-size: 10vw;
+	color: #fff;
+	text-decoration-line: overline;
+
+}
+
+/*Lap*/
+#lap {
+	text-align: right;
+	font-size: 3vw;
+}
+
+/*time*/
+#time {
+	text-align: center;
+	font-size: 7vw;
+	padding-top: 100px;
+
+}
+
+/*Buttons*/
+#controlsContainer {
+	margin-bottom: 100px;
+
+}
+
+.control {
+	color: white;
+	background-color: chocolate;
+	border-radius: 100%;
+	height: 9vw;
+	width: 9vw;
+	text-align: center;
+	padding-top: 20%;
+	font-size: 2.5vw;
+	cursor: pointer;
+}
+
+.control:active {
+	background-color: #fff;
+	color: chocolate;
+}
+
+/*laps*/
+#laps {
+	max-height: 270px;
+	overflow: scroll;
+}
