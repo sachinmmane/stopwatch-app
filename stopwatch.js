@@ -12,7 +12,7 @@ $(function(){
 	//on App load show start and lap button
 	hideshowButton("#startButton", "#lapButton");
 	
-	//click start button 
+	
 	$("#startButton").click(function(){
 		//mode on
 		mode = 1;
@@ -24,23 +24,51 @@ $(function(){
 		
 	
 	//click on stop button
+	$("#stopButton").click(function(){
 		//show resume and reset button
+		hideshowButton("#resumeButton", "#resetButton")
 		//Stop counter
+		clearInterval(action);
+	})
+		
 	
 	
 	//click on resume button
-		//show stop and lap button
+	$("#resumeButton").click(function(){
+	//show stop and lap button
+		hideshowButton("#stopButton", "#lapButton")
+		
 		//start counter
+		startAction();
+	})
+	
+		
 	
 	//click on reset Button
-		//reaload the page
+		$("#resetButton").click(function(){
+	//reaload the page
+		location.reload();
+	})
+		
 	
 	
 	//click on Lap Button
-		//if mode in on
+	$("#lapButton").click(function(){
+	//if mode in on
+		if(mode){
 			//stop action
+			clearInterval(action);
 			//resetLap and print lap details
+			lapcounter = 0;
+			addlap();
 			//start action
+			startAction();
+		}
+			
+		
+		
+	})
+		
 	
 	//function
 	//hideshowButton functions shows two buttons
@@ -95,6 +123,15 @@ $(function(){
 			return number;
 		}
 	}
+	
+	//addlap function print the lap details inside the lapbox
+	
+	function addlap() {
+		var mylapdetails = '<div>Lap</div>';
+		$(mylapdetails).appendTo("#laps");
+		
+	}
+	
 	
 	
 });
